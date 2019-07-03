@@ -5,7 +5,7 @@
     box-sizing: 0;
 }
 body {
-    font-family: Montserrat;
+    font-family: "Montserrat";
 }
 
 .container-fluid{
@@ -35,7 +35,7 @@ a{
     clear: both;
 }
 
- /*CABECERA-HEADER*/
+ /*CABECERA-HEADER_________________________________________________________________________________*/
 header .submenu{
     background-color: #21242E;
     color: white;
@@ -106,6 +106,58 @@ header .hamburguesa .linea{
     margin-bottom: 10px;
 }
 
+/*FIN DE HEADER_______________________________________________________________________________________*/
+
+/*HERO________________________________________________________________________________________________*/
+.hero{
+    background-image: url("../images/fondo.jpg");
+    height: 550px; /*es mejor que el heroe se quede corto y que se vean más cosas para que el usuario sepa que continua el scroll*/
+    background-size: cover; /*esto es para que no repita la imagen a la derecha y se adapte a su ancho, no vuelva a empezar*/
+    background-position: center center; /*esto es para que al hacerla responsive, que la imagen se ajuste en el eje de coordenadas para que se vaya centrando y no perder la hamburguesa de vista. El primer dato alude al eje Y y el segundo al Y*/
+    background-color: #444;
+    background-blend-mode: soft-light;
+}
+
+.hero>div{
+    padding: 15% 10%;
+    color: white;
+}
+
+.hero>div h1 {
+    font-size: 2em;
+    font-family: "handlee", cursive;
+}
+
+.hero>div h2{
+    color: #fa573a;
+    font-size: 1.25em;
+    padding: .8em 0; /*también se podría poner un margin: 20px 0; en este caso daría igual*/
+}
+
+.hero .boton{
+    background-color: #fa573a;
+    display: inline-block;
+    padding: .9em; /*podríamos dar una medida exacta al botón con height y width, pero es menos eficiente*/
+    margin: .8em 0;
+    border: 2px solid #fa573a; /*podemos el borde aquí para que no cambie el tamaño al hacer hover*/
+}
+
+.hero .boton:hover{
+    background-color: transparent;
+    color: #fa573a;
+}
+
+.hero .social{
+    display: flex;
+}
+
+.hero .social li{
+    margin-right: 15px;
+    font-size: 1.5em;
+}
+
+/*MEDIA QUERYS________________________________________________________________________________________________*/
+
 @media (max-width: 768px){
         header .submenu .row div a span {
         font-size: .7em;
@@ -149,5 +201,9 @@ header .hamburguesa .linea{
 
         header nav .menu li:last-child {
             border-bottom: 0;
+        }
+
+        .hero{
+            height: 350px;
         }
 }

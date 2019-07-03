@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Handlee|Montserrat:400,700&display=swap');
 
 *{
-    box-sizing: 0;
+    box-sizing: border-box; /*esto es para quitar el residuo del espacio de los bordes*/
 }
 body {
     font-family: "Montserrat";
@@ -124,7 +124,7 @@ header .hamburguesa .linea{
 }
 
 .hero>div h1 {
-    font-size: 2em;
+    font-size: 2.5em;
     font-family: "handlee", cursive;
 }
 
@@ -155,6 +155,99 @@ header .hamburguesa .linea{
     margin-right: 15px;
     font-size: 1.5em;
 }
+/*FIN hero_____________________________________________________________________________________________________*/
+
+/*COMIENZA MAIN________________________________________________________________________________________________*/
+section{
+    padding: 50px 0;
+}
+
+main section h2 {
+    color: black;
+    font-family: "handlee", cursive;
+    text-align: center;
+    font-size: 2em;
+}
+
+main section h2 span{
+    color: #fa573a;
+}
+
+main section .underline{
+    position: relative;
+    width: 9.375em;
+    margin: 0 auto;
+    color: #fa573a;
+}
+
+main section .underline hr{
+    border-color: #fa573a; /*los hr se colorean así*/
+}
+main section .underline span{
+    display: block;
+    font-weight: bold;
+    font-family: "handlee", cursive;
+    position: absolute;
+    top:-6px;
+    right: 67px;
+}
+
+main section .flex{
+    display: flex;
+    flex-wrap: wrap; /*esto hace que el sistema flexible dependa del ancho de los elementos que contiene, así podemos hacer responsive y jugar con los anchos*/
+                     /*Ahora habría que asignarle a cada article un tamaño de anchura para que funcione el wrap. Si nos pasamos del 100% lo baja, creando un sistema de columnas. Así podemos hacer responsive*/
+                     /* los flex son nowrap por defecto, pero esto hace que si reduces el tamaño de la pantalla, aprieta hasta el final el texto sin recolocarlo*/
+    margin-top: 50px;
+}
+
+main section .flex article{
+    width: 33%;
+    border-left: 1px solid #ccc;
+    padding: 0px 25px;
+}
+
+main #ourservices article .icon{
+    color: #fa573a;
+    border: 2px solid #fa573a;
+    padding: 10px;
+    font-size: 120%;
+}
+
+main #ourservices article h3{
+    font-weight: bold;
+    font-size: 120%;
+    margin: 15px 0;
+}
+
+main #ourservices article p{
+    color: #aaa;
+}
+
+main .enlace{
+    color: #fa573a;
+    font-weight: bold;
+    display: block;
+    margin: 20px 0 0 0;
+}
+
+main .enlace i{ /*para animar la flecha del icono y que regrese a la izquierda*/
+    margin-left: 0px;
+    transition: 1s;
+}
+
+main .enlace:hover i{ /*para animar la flecha del icono y que vaya a la derecha*/
+    margin-left: 10px;
+    transition: 1s;
+}
+
+/*OTRA FORMA DE HACER LA ANIMACION
+    main .enlace i{
+        transition: 1s;
+    }
+    main .enlace:hover i{
+        transform: translate(10px);
+    }
+*/
 
 /*MEDIA QUERYS________________________________________________________________________________________________*/
 
@@ -164,6 +257,18 @@ header .hamburguesa .linea{
     }
         header .submenu .row div:nth-child(3),header .submenu .row div:nth-child(4), header .submenu .row div:nth-child(1), header .submenu .row div:nth-child(2){
         text-align: center;
+    }
+
+    main section .flex article{
+        width: 50%;
+        margin-bottom: 25px;
+    }
+
+    main section .flex article:last-child{
+        width: 100%;
+    }
+    main section .flex article:first-child, main section .flex article:first-child{
+        border-left: 0px;
     }
 }
 
@@ -205,5 +310,13 @@ header .hamburguesa .linea{
 
         .hero{
             height: 350px;
+        }
+
+        main section .flex article{
+            width: 100%;
+           /* margin-bottom: 25px; no hace falta porque se hereda del anterior query*/
+           border-left: 0px;
+           padding-bottom: 20px;
+           border-bottom: 1px solid #ccc;
         }
 }

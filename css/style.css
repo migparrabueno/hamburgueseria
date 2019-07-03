@@ -12,6 +12,12 @@ body {
     width: 100%;
 }
 
+img{
+    width: 100%;
+    height: auto;
+    /*Esto es para que todas las imágenes sean tan anchas su bloque y la altura sea automática y se adapte*/
+}
+
 a{
     color: inherit;
     text-decoration: none;
@@ -54,6 +60,52 @@ header .submenu .row div:nth-child(3),header .submenu .row div:nth-child(4){
     text-align: right;
 }
 
+/*HEADER NAV*/
+header nav{
+    background-color: white;
+    padding: 20px 0;
+}
+
+header nav .logo{
+    width: 100px;
+    height: auto;
+    float: left;
+}
+
+header nav .menu{
+    float: right;
+    padding-top: 9px;
+}
+
+header nav .menu li{
+    display: inline-block;
+    margin-left: 15px;
+}
+
+header nav li a{
+    color: #666;
+}
+
+header nav li a:hover{
+    color: #fa573a;
+}
+
+header nav li .activo{  /* esto es para hacer que se quede marcado el botón de la sección en la que estamos*/
+    color: #666;
+}
+
+header .hamburguesa {
+    display: none;
+    float: right;
+    cursor: pointer; /*esto es para que salga la mano de hacer click cuando pasamos por encima*/
+}
+
+header .hamburguesa .linea{
+    border-top: 2px solid #aaa;
+    width: 30px;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 768px){
         header .submenu .row div a span {
         font-size: .7em;
@@ -61,6 +113,7 @@ header .submenu .row div:nth-child(3),header .submenu .row div:nth-child(4){
         header .submenu .row div:nth-child(3),header .submenu .row div:nth-child(4), header .submenu .row div:nth-child(1), header .submenu .row div:nth-child(2){
         text-align: center;
     }
+}
 
 @media (max-width: 600px){
         header .submenu .row div a span {
@@ -71,5 +124,30 @@ header .submenu .row div:nth-child(3),header .submenu .row div:nth-child(4){
             font-size: 2em;
             margin-right:0;
         }
-    }
+
+        header nav{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        header .hamburguesa{
+            display: block;
+            float: right;
+        }
+
+        header nav .menu{
+            float: none;
+            padding-top: 60px;
+        }
+
+        header nav .menu li{
+            display: block;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #aaa;
+        }
+
+        header nav .menu li:last-child {
+            border-bottom: 0;
+        }
 }

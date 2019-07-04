@@ -134,7 +134,7 @@ header .hamburguesa .linea{
     padding: .8em 0; /*también se podría poner un margin: 20px 0; en este caso daría igual*/
 }
 
-.hero .boton{
+.boton{
     background-color: #fa573a;
     display: inline-block;
     padding: .9em; /*podríamos dar una medida exacta al botón con height y width, pero es menos eficiente*/
@@ -142,7 +142,7 @@ header .hamburguesa .linea{
     border: 2px solid #fa573a; /*podemos el borde aquí para que no cambie el tamaño al hacer hover*/
 }
 
-.hero .boton:hover{
+.boton:hover{
     background-color: transparent;
     color: #fa573a;
 }
@@ -249,10 +249,47 @@ main .enlace:hover i{ /*para animar la flecha del icono y que vaya a la derecha*
     }
 */
 
-main section #aboutus{
-    margin-top: 100px;
+main #aboutus .columna{
+    width: 50%;
+    padding: 15px;
 }
 
+main #aboutus .imagen .marco{
+    border: 3px solid #fa573a; 
+    transform: rotateZ(10deg); 
+    transition: 1s;  
+}
+
+main #aboutus .imagen .marco img{
+    transform: rotateZ(-10deg);
+    transition: 1s;
+    display: block; /*si no le ponemos esto, queda una línea entre la imagen y el marco porque el img es un elemento en línea luego no ocupa el 100% del contenedor, al hacerlo un bloque sí que ocupa el 100%*/
+}
+
+main #aboutus .imagen:hover .marco{
+    transform: rotateZ(0deg);
+}
+
+main #aboutus .imagen:hover img{
+    transform: rotateZ(0deg);
+}
+
+main #aboutus h3{
+    font-weight: bold;
+    font-size: 110%;
+}
+
+main #aboutus h4{
+    color: #fa573a;
+    margin: 10px 0;
+}
+
+main #aboutus a{
+    color: white;
+}
+main #aboutus a:hover{
+    color: #fa573a;
+}
 /*MEDIA QUERYS________________________________________________________________________________________________*/
 @media (max-width:1100px){
     .hero>div{
@@ -328,5 +365,13 @@ main section #aboutus{
            border-left: 0px;
            padding-bottom: 20px;
            border-bottom: 1px solid #ccc;
+        }
+
+        main #aboutus .columna{
+            width: 100%;
+        }
+
+        main #aboutus .flex{
+            flex-direction: column-reverse; /*para cambiar el orden de las columnas*/
         }
 }

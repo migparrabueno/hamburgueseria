@@ -1,0 +1,326 @@
+@import url("reset.css");
+@import url('https://fonts.googleapis.com/css?family=Handlee|Montserrat:400,700&display=swap');
+
+*{
+    box-sizing: border-box; /*esto es para quitar el residuo del espacio de los bordes*/
+}
+body {
+    font-family: "Montserrat";
+}
+
+.container-fluid{
+    width: 100%;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    /*Esto es para que todas las imágenes sean tan anchas su bloque y la altura sea automática y se adapte*/
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.row{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.row:after{
+    content:"";
+    display: block;
+    height:0;
+    clear: both;
+}
+
+ /*CABECERA-HEADER_________________________________________________________________________________*/
+header .submenu{
+    background-color: #21242E;
+    color: white;
+    padding: 20px 0;
+}
+
+header .submenu i{
+    color: #fa573a;
+    margin-right: 10px;
+}
+
+header .submenu a:hover{
+    color: #fa573a;
+}
+
+header .submenu .row div{
+    float: left;
+    width: 25%;
+}
+
+header .submenu .row div:nth-child(3),header .submenu .row div:nth-child(4){
+    text-align: right;
+}
+
+/*HEADER NAV*/
+header nav{
+    background-color: white;
+    padding: 20px 0;
+}
+
+header nav .logo{
+    width: 100px;
+    height: auto;
+    float: left;
+}
+
+header nav .menu{
+    float: right;
+    padding-top: 9px;
+}
+
+header nav .menu li{
+    display: inline-block;
+    margin-left: 15px;
+}
+
+header nav li a{
+    color: #666;
+}
+
+header nav li a:hover{
+    color: #fa573a;
+}
+
+header nav li .activo{  /* esto es para hacer que se quede marcado el botón de la sección en la que estamos*/
+    color: #666;
+}
+
+header .hamburguesa {
+    display: none;
+    float: right;
+    cursor: pointer; /*esto es para que salga la mano de hacer click cuando pasamos por encima*/
+}
+
+header .hamburguesa .linea{
+    border-top: 2px solid #aaa;
+    width: 30px;
+    margin-bottom: 10px;
+}
+
+/*FIN DE HEADER_______________________________________________________________________________________*/
+
+/*HERO________________________________________________________________________________________________*/
+.hero{
+    background-image: url("../images/fondo.jpg");
+    height: 550px; /*es mejor que el heroe se quede corto y que se vean más cosas para que el usuario sepa que continua el scroll*/
+    background-size: cover; /*esto es para que no repita la imagen a la derecha y se adapte a su ancho, no vuelva a empezar*/
+    background-position: center center; /*esto es para que al hacerla responsive, que la imagen se ajuste en el eje de coordenadas para que se vaya centrando y no perder la hamburguesa de vista. El primer dato alude al eje Y y el segundo al Y*/
+    background-color: #444;
+    background-blend-mode: soft-light;
+}
+
+.hero>div{
+    padding: 15% 10%;
+    color: white;
+}
+
+.hero>div h1 {
+    font-size: 2.5em;
+    font-family: "handlee", cursive;
+}
+
+.hero>div h2{
+    color: #fa573a;
+    font-size: 1.25em;
+    padding: .8em 0; /*también se podría poner un margin: 20px 0; en este caso daría igual*/
+}
+
+.hero .boton{
+    background-color: #fa573a;
+    display: inline-block;
+    padding: .9em; /*podríamos dar una medida exacta al botón con height y width, pero es menos eficiente*/
+    margin: .8em 0;
+    border: 2px solid #fa573a; /*podemos el borde aquí para que no cambie el tamaño al hacer hover*/
+}
+
+.hero .boton:hover{
+    background-color: transparent;
+    color: #fa573a;
+}
+
+.hero .social{
+    display: flex;
+}
+
+.hero .social li{
+    margin-right: 15px;
+    font-size: 1.5em;
+}
+/*FIN hero_____________________________________________________________________________________________________*/
+
+/*COMIENZA MAIN________________________________________________________________________________________________*/
+section{
+    padding: 50px 0;
+}
+
+main section h2 {
+    color: black;
+    font-family: "handlee", cursive;
+    text-align: center;
+    font-size: 2em;
+}
+
+main section h2 span{
+    color: #fa573a;
+}
+
+main section .underline{
+    position: relative;
+    width: 9.375em;
+    margin: 0 auto;
+    color: #fa573a;
+}
+
+main section .underline hr{
+    border-color: #fa573a; /*los hr se colorean así*/
+}
+main section .underline span{
+    display: block;
+    font-weight: bold;
+    font-family: "handlee", cursive;
+    position: absolute;
+    top:-6px;
+    right: 67px;
+}
+
+main section .flex{
+    display: flex;
+    flex-wrap: wrap; /*esto hace que el sistema flexible dependa del ancho de los elementos que contiene, así podemos hacer responsive y jugar con los anchos*/
+                     /*Ahora habría que asignarle a cada article un tamaño de anchura para que funcione el wrap. Si nos pasamos del 100% lo baja, creando un sistema de columnas. Así podemos hacer responsive*/
+                     /* los flex son nowrap por defecto, pero esto hace que si reduces el tamaño de la pantalla, aprieta hasta el final el texto sin recolocarlo*/
+    margin-top: 50px;
+}
+
+main section .flex article{
+    width: 33%;
+    border-left: 1px solid #ccc;
+    padding: 0px 25px;
+}
+
+main #ourservices article .icon{
+    color: #fa573a;
+    border: 2px solid #fa573a;
+    padding: 10px;
+    font-size: 120%;
+}
+
+main #ourservices article h3{
+    font-weight: bold;
+    font-size: 120%;
+    margin: 15px 0;
+}
+
+main #ourservices article p{
+    color: #aaa;
+}
+
+main .enlace{
+    color: #fa573a;
+    font-weight: bold;
+    display: block;
+    margin: 20px 0 0 0;
+}
+
+main .enlace i{ /*para animar la flecha del icono y que regrese a la izquierda*/
+    margin-left: 0px;
+    transition: 1s;
+}
+
+main .enlace:hover i{ /*para animar la flecha del icono y que vaya a la derecha*/
+    margin-left: 10px;
+    transition: 1s;
+}
+
+/*OTRA FORMA DE HACER LA ANIMACION
+    main .enlace i{
+        transition: 1s;
+    }
+    main .enlace:hover i{
+        transform: translate(10px);
+    }
+*/
+
+main section #aboutus{
+    margin-top: 100px;
+}
+
+/*MEDIA QUERYS________________________________________________________________________________________________*/
+
+@media (max-width: 768px){
+        header .submenu .row div a span {
+        font-size: .7em;
+    }
+        header .submenu .row div:nth-child(3),header .submenu .row div:nth-child(4), header .submenu .row div:nth-child(1), header .submenu .row div:nth-child(2){
+        text-align: center;
+    }
+
+    main section .flex article{
+        width: 50%;
+        margin-bottom: 25px;
+    }
+
+    main section .flex article:last-child{
+        width: 100%;
+    }
+    main section .flex article:first-child, main section .flex article:first-child{
+        border-left: 0px;
+    }
+}
+
+@media (max-width: 600px){
+        header .submenu .row div a span {
+            display: none;
+        }
+
+        header i {
+            font-size: 2em;
+            margin-right:0;
+        }
+
+        header nav{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        header .hamburguesa{
+            display: block;
+            float: right;
+        }
+
+        header nav .menu{
+            float: none;
+            padding-top: 60px;
+        }
+
+        header nav .menu li{
+            display: block;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #aaa;
+        }
+
+        header nav .menu li:last-child {
+            border-bottom: 0;
+        }
+
+        .hero{
+            height: 350px;
+        }
+
+        main section .flex article{
+            width: 100%;
+           /* margin-bottom: 25px; no hace falta porque se hereda del anterior query*/
+           border-left: 0px;
+           padding-bottom: 20px;
+           border-bottom: 1px solid #ccc;
+        }
+}

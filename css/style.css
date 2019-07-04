@@ -249,6 +249,10 @@ main .enlace:hover i{ /*para animar la flecha del icono y que vaya a la derecha*
     }
 */
 
+main section #aboutus{
+    margin-top: 100px;
+}
+
 /*MEDIA QUERYS________________________________________________________________________________________________*/
 
 @media (max-width: 768px){
